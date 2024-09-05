@@ -1,28 +1,41 @@
+let chartInstance; 
+
 document.getElementById("oxygenForm").addEventListener("submit", function(event) {
     event.preventDefault();
 
-    // captura os valores inseridos
+    
     let carbono = parseFloat(document.getElementById("carbono").value);
     let fotossintese = parseFloat(document.getElementById("fotossintese").value);
-    let queimadas = parseInt(document.getElementById("queimadas").value);
-    let reflorestamento = parseInt(document.getElementById("reflorestamento").value);
+    let queimadas = parseInt(document.getElementById("queimadas").value, 10);
+    let reflorestamento = parseInt(document.getElementById("reflorestamento").value, 10);
 
-    // processar os dados
+    
+    if (isNaN(carbono) || isNaN(fotossintese) || isNaN(queimadas) || isNaN(reflorestamento)) {
+        alert("Por favor, insira valores numéricos válidos em todos os campos.");
+        return;
+    }
+
+    
     let carbonoRestante = carbono - (fotossintese / 100 * carbono) - queimadas * 2 + reflorestamento * 0.5;
     let oxigenioGerado = fotossintese * 10 + reflorestamento * 0.1;
     let co2Emitido = queimadas * 3 - reflorestamento * 0.2;
 
-    // Exibir os resultados
+    
     document.getElementById("carbonoOutput").innerText = `Carbono Restante: ${carbonoRestante.toFixed(2)} toneladas`;
     document.getElementById("oxigenioOutput").innerText = `Oxigênio Gerado: ${oxigenioGerado.toFixed(2)} toneladas`;
     document.getElementById("co2Output").innerText = `CO₂ Emitido: ${co2Emitido.toFixed(2)} toneladas`;
 
     document.getElementById("result").style.display = "block";
 
-    // gráfico Dinâmico
-    //vbm
+   
     const ctx = document.getElementById('chart').getContext('2d');
-    const chart = new Chart(ctx, {
+
+    
+    if (chartInstance) {
+        chartInstance.destroy();
+    }
+
+    chartInstance = new Chart(ctx, {
         type: 'bar',
         data: {
             labels: ['Carbono Restante', 'Oxigênio Gerado', 'CO₂ Emitido'],
@@ -43,7 +56,7 @@ document.getElementById("oxygenForm").addEventListener("submit", function(event)
     });
 });
 
-// função para baixar PDF
+
 document.getElementById("downloadPdfBtn").addEventListener("click", function() {
     const { jsPDF } = window.jspdf;
     const doc = new jsPDF();
@@ -57,10 +70,26 @@ document.getElementById("downloadPdfBtn").addEventListener("click", function() {
     doc.text(oxigenioOutput, 10, 30);
     doc.text(co2Output, 10, 40);
 
-    // capturar o gráfico como imagem
+    
+    const downloadBtn = document.getElementById("downloadPdfBtn");
+    downloadBtn.innerText = "Gerando PDF...";
+    downloadBtn.disabled = true;
+
+    
     html2canvas(document.getElementById('chart')).then(canvas => {
         const imgData = canvas.toDataURL('image/png');
         doc.addImage(imgData, 'PNG', 10, 50, 190, 100);
         doc.save("simulacao_ciclo_oxigenio.pdf");
+
+        
+        downloadBtn.innerText = "Baixar PDF";
+        downloadBtn.disabled = false;
+    }).catch(error => {
+        alert("Ocorreu um erro ao gerar o PDF. Por favor, tente novamente.");
+        console.error(error);
+
+       
+        downloadBtn.innerText = "Baixar PDF";
+        downloadBtn.disabled = false;
     });
 });
