@@ -1,0 +1,98 @@
+/* Estilo geral do corpo */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-image: url('arquivos/imagens/fog-1535201_1920.jpg'); 
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: #ffffff;
+    height: 100vh; 
+    overflow: hidden; 
+}
+
+/* Container principal */
+.container {
+    background: rgba(91, 153, 194, 0.7); /* Fundo semi-transparente */
+    padding: 20px;
+    margin: 50px auto;
+    max-width: 800px;
+    border-radius: 15px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+    position: relative;
+}
+
+
+.header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+
+h1 {
+    color: #ffffff; 
+    margin: 0;
+}
+
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    position: relative;
+    padding: 20px; 
+}
+
+
+label {
+    font-size: 1.2em;
+    color: #D1E9F6;
+}
+
+
+input[type="text"], input[type="email"], textarea {
+    padding: 15px; 
+    font-size: 1.2em; 
+    border: 2px solid #5B99C2;
+    border-radius: 5px;
+    background: rgba(255, 255, 255, 0.8);
+    color: #000000;
+    width: 100%; 
+    box-sizing: border-box; 
+}
+
+
+button {
+    padding: 12px;
+    font-size: 1.2em;
+    color: #ffffff;
+    background-color: #5B99C2;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 100%; 
+}
+
+button:hover {
+    background-color: #3f6a87; 
+}
+
+
+a.back-link {
+    display: block;
+    margin: 20px auto;
+    text-align: center;
+    font-size: 1.2em;
+    color: #5B99C2;
+    text-decoration: none;
+    background-color: #ffffff;
+    padding: 10px;
+    border-radius: 5px;
+    width: 200px;
+}
+
+a.back-link:hover {
+    background-color: #e0e0e0;
+}

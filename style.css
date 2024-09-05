@@ -1,0 +1,144 @@
+/* Estilo geral do corpo */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-image: url('arquivos/imagens/fog-1535201_1920.jpg'); /* Caminho da sua imagem de fundo */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: #ffffff;
+}
+
+/* Container principal */
+.container {
+    background: rgba(91, 153, 194, 0.7); /* Fundo semi-transparente para destacar o conteúdo */
+    padding: 20px;
+    margin: 50px auto;
+    max-width: 800px;
+    border-radius: 15px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+}
+
+/* Estilo do cabeçalho */
+.header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.destaque {
+    width: 45%;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+/* Estilo dos títulos */
+h1 {
+    color: #ffffff; /* Cor branca para o título principal */
+    margin: 0;
+}
+
+h2 {
+    color: #5B99C2; /* Cor para subtítulos */
+    margin: 0;
+}
+
+/* Estilo do formulário */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* Estilo dos labels */
+label {
+    font-size: 1.2em;
+    color: #D1E9F6;
+}
+
+/* Estilo dos inputs */
+input[type="number"], input[type="text"], textarea {
+    padding: 10px;
+    font-size: 1em;
+    border: 2px solid #5B99C2;
+    border-radius: 5px;
+    background: rgba(255, 255, 255, 0.8);
+}
+
+/* Estilo do botão de submissão */
+button.submit-btn {
+    padding: 12px;
+    font-size: 1.2em;
+    color: #ffffff;
+    background-color: #5B99C2;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 100%; /* Garante que o botão ocupe toda a largura disponível */
+}
+
+button.submit-btn:hover {
+    background-color: #3f6a87; /* Um tom mais escuro de azul para o efeito hover */
+}
+
+/* Estilo dos resultados */
+.result {
+    text-align: center;
+    color: #ffffff; /* Cor branca para o texto dos resultados */
+}
+
+.result p {
+    font-weight: bold; /* Texto em negrito para os resultados */
+}
+
+/* Estilo do gráfico */
+#chart {
+    margin-top: 20px;
+    max-width: 100%;
+}
+
+/* Estilo do grupo de botões */
+.button-group {
+    display: flex;
+    justify-content: space-between; /* Espaça os botões igualmente */
+    margin-top: 20px;
+}
+
+/* Estilo do botão Fale Conosco */
+.contact-link {
+    padding: 12px 20px;
+    font-size: 1.2em;
+    color: #ffffff;
+    background-color: #5B99C2;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    text-align: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    flex: 1; /* Faz o link ocupar o mesmo espaço que o botão */
+    margin-right: 10px; /* Espaço entre os botões */
+}
+
+.contact-link:hover {
+    background-color: #3f6a87;
+}
+
+/* Estilo do botão Baixar PDF */
+.download-btn {
+    padding: 12px 20px;
+    font-size: 1.2em;
+    color: #ffffff;
+    background-color: #5B99C2;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    flex: 1; /* Faz o botão ocupar o mesmo espaço que o link */
+    margin-left: 10px; /* Espaço entre os botões */
+}
+
+.download-btn:hover {
+    background-color: #3f6a87;
+}

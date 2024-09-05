@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulação do Ciclo do Oxigênio</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <img src="arquivos/imagens/mrICIdC_gif (847×461).gif" alt="Imagem Destaque" class="destaque">
+            <h1>Simulação do Ciclo do Oxigênio</h1>
+        </div>
+
+        <form id="oxygenForm">
+            <div class="input-group">
+                <label for="carbono">Entrada de Carbono (em toneladas):</label>
+                <input type="number" id="carbono" name="carbono" required>
+            </div>
+
+            <div class="input-group">
+                <label for="fotossintese">Taxa de Fotossíntese (em %):</label>
+                <input type="number" id="fotossintese" name="fotossintese" required>
+            </div>
+
+            <div class="input-group">
+                <label for="queimadas">Número de Queimadas:</label>
+                <input type="number" id="queimadas" name="queimadas" required>
+            </div>
+
+            <div class="input-group">
+                <label for="reflorestamento">Árvores Plantadas (em unidades):</label>
+                <input type="number" id="reflorestamento" name="reflorestamento" required>
+            </div>
+
+            <button type="submit" class="submit-btn">Simular</button>
+        </form>
+
+        <div id="result" class="result" style="display:none;">  
+            <h2>Resultados</h2>
+            <p id="carbonoOutput"></p>
+            <p id="oxigenioOutput"></p>
+            <p id="co2Output"></p>
+
+            <canvas id="chart"></canvas>
+        </div>
+
+        <div class="button-group">
+            <a href="fale_conosco.html" class="contact-link">Fale Conosco</a>
+            <button id="downloadPdfBtn" class="download-btn">Baixar PDF</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
