@@ -7,11 +7,24 @@ function enviarFormulario(event) {
     const mensagem = document.getElementById('message').value.trim();
 
     if (nome === "" || email === "" || assunto === "" || mensagem === "") {
-        alert('Por favor, preencha todos os campos antes de enviar.');
+        mostrarMensagem('Por favor, preencha todos os campos antes de enviar.', 'error');
         return; 
     }
-    alert('Obrigado por entrar em contato! Seu e-mail foi enviado com sucesso.');
-    
+
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+        mostrarMensagem('Por favor, insira um e-mail válido.', 'error');
+        return;
+    }
+
+    mostrarMensagem('Obrigado por entrar em contato! Seu e-mail foi enviado com sucesso.', 'success');
     
     document.getElementById('contactForm').reset();
+}
+
+function mostrarMensagem(mensagem, tipo) {
+    const mensagemElemento = document.getElementById('feedbackMessage');
+    mensagemElemento.innerText = mensagem;
+    mensagemElemento.className = `feedback-message ${tipo}`;
+    mensagemElemento.style.display = 'block';
 }

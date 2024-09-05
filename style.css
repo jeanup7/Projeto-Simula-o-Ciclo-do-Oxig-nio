@@ -45,6 +45,10 @@ form {
     gap: 15px;
 }
 
+.input-group {
+    margin-bottom: 15px;
+}
+
 label {
     font-size: 1.2em;
     color: #D1E9F6;
