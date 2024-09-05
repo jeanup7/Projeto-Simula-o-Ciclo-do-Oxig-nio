@@ -6,6 +6,7 @@ body {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+    background-attachment: fixed;
     color: #ffffff;
 }
 
@@ -60,6 +61,12 @@ input[type="number"], input[type="text"], textarea {
     border: 2px solid #5B99C2;
     border-radius: 5px;
     background: rgba(255, 255, 255, 0.8);
+    width: 100%;
+    box-sizing: border-box;
+}
+
+textarea {
+    resize: vertical;
 }
 
 button.submit-btn {
@@ -71,7 +78,7 @@ button.submit-btn {
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s ease;
-    width: 100%; 
+    width: 100%;
 }
 
 button.submit-btn:hover {
@@ -98,38 +105,29 @@ button.submit-btn:hover {
     margin-top: 20px;
 }
 
-.contact-link {
+.contact-link, .download-btn {
     padding: 12px 20px;
     font-size: 1.2em;
     color: #ffffff;
     background-color: #5B99C2;
     border: none;
     border-radius: 5px;
-    text-decoration: none;
-    text-align: center;
     cursor: pointer;
     transition: background-color 0.3s ease;
+    text-align: center;
+    text-decoration: none;
+}
+
+.contact-link:hover, .download-btn:hover {
+    background-color: #3f6a87;
+}
+
+.contact-link {
     flex: 1; 
     margin-right: 10px; 
 }
 
-.contact-link:hover {
-    background-color: #3f6a87;
-}
-
 .download-btn {
-    padding: 12px 20px;
-    font-size: 1.2em;
-    color: #ffffff;
-    background-color: #5B99C2;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
     flex: 1; 
     margin-left: 10px; 
-}
-
-.download-btn:hover {
-    background-color: #3f6a87;
 }
